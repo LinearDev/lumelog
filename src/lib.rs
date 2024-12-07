@@ -106,7 +106,7 @@ pub struct FileLogger {
 pub struct ConfigBuilder {
     /// Log level for the logger.
     pub log_level: Option<LogLevel>,
-
+    /// Enables or disables logging in release mode.
     pub log_in_release: bool,
     /// Enables or disables time-stamping in logs.
     pub log_with_time: Option<bool>,
