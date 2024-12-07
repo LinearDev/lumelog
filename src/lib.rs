@@ -171,7 +171,11 @@ impl ConfigBuilder {
                     self.log_level.unwrap()
                 },
             log_in_release: self.log_in_release,
-            log_with_time: self.log_with_time.unwrap(),
+            log_with_time: if self.log_with_time.is_none() {
+                    true
+                } else {
+                    self.log_with_time.unwrap()
+            },
             std: self.std,
             file_logger_config: if self.file_logger_config.is_none() {
                     FileLoggerBuilder::new().build().unwrap()

@@ -52,7 +52,8 @@ pub fn log(level: LogLevel, message: &str) {
         }
     };
     
-    if !cfg!(debug_assertions) && !config_ref.log_in_release && level >= LogLevel::DEBUG {
+    if !cfg!(debug_assertions) && config_ref.log_in_release == false {return;}
+    if !cfg!(debug_assertions) && config_ref.log_in_release == true && level >= LogLevel::DEBUG {
         return;
     }
 
