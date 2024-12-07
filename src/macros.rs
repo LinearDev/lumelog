@@ -31,13 +31,13 @@
 #[macro_export]
 macro_rules! info {
     ($message: expr, $($arg:tt)+) => (
-        $crate::log::log(
+        $crate::__private_log::log(
             $crate::LogLevel::INFO,
             format!($message, $($arg)+).as_str(),
         );
     );
     ($message: expr) => (
-        $crate::log::log($crate::LogLevel::INFO, $message);
+        $crate::__private_log::log($crate::LogLevel::INFO, $message);
     )
 }
 
@@ -54,13 +54,13 @@ macro_rules! info {
 #[macro_export]
 macro_rules! error {
     ($message: expr, $($arg:tt)+) => (
-        $crate::log::log(
+        $crate::__private_log::log(
             $crate::LogLevel::ERROR,
             format!($message, $($arg)+).as_str(),
         );
     );
     ($message: expr) => (
-        $crate::log::log($crate::LogLevel::ERROR, $message);
+        $crate::__private_log::log($crate::LogLevel::ERROR, $message);
     )
 }
 
@@ -77,13 +77,13 @@ macro_rules! error {
 #[macro_export]
 macro_rules! warn {
     ($message: expr, $($arg:tt)+) => (
-        $crate::log::log(
+        $crate::__private_log::log(
             $crate::LogLevel::WARN,
             format!($message, $($arg)+).as_str(),
         );
     );
     ($message: expr) => (
-        $crate::log::log($crate::LogLevel::WARN, $message);
+        $crate::__private_log::log($crate::LogLevel::WARN, $message);
     )
 }
 
@@ -101,14 +101,14 @@ macro_rules! warn {
 macro_rules! debug {
     // Formatted message case
     ($message:expr, $($arg:tt)+) => {
-        $crate::log::log(
+        $crate::__private_log::log(
             $crate::LogLevel::DEBUG,
             format!($message, $($arg)+).as_str(),
         );
     };
     // Simple message case
     ($message:expr) => {
-        $crate::log::log($crate::LogLevel::DEBUG, $message);
+        $crate::__private_log::log($crate::LogLevel::DEBUG, $message);
     };
 }
 
@@ -129,13 +129,13 @@ macro_rules! debug {
 macro_rules! trace {
     // Formatted message case
     ($message:expr, $($arg:tt)+) => {
-        $crate::log::log(
+        $crate::__private_log::log(
             $crate::LogLevel::TRACE,
             format!($message, $($arg)+).as_str(),
         );
     };
     // Simple message case
     ($message:expr) => {
-        $crate::log::log($crate::LogLevel::TRACE, $message);
+        $crate::__private_log::log($crate::LogLevel::TRACE, $message);
     };
 }

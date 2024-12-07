@@ -19,7 +19,7 @@ use once_cell::sync::OnceCell;
 mod macros;
 
 #[doc(hidden)]
-mod log;
+pub mod __private_log;
 
 /// Global configuration instance.
 static CONFIG: OnceCell<Config> = OnceCell::new();

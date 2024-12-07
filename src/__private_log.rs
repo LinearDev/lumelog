@@ -47,12 +47,12 @@ pub fn log(level: LogLevel, message: &str) {
     let config_ref: &Config = match CONFIG.get() {
         Some(c) => c,
         None => {
-            print!("[ FATAL ] LumaLog: Config has not been initialized!");
+            print!("[ FATAL ] LumaLog: Config has not been initialized!\n");
             return;
         }
     };
     
-    if !cfg!(debug_assertions) && !config_ref.log_in_release || level >= LogLevel::DEBUG {
+    if !cfg!(debug_assertions) && !config_ref.log_in_release && level >= LogLevel::DEBUG {
         return;
     }
 

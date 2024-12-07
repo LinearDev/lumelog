@@ -7,7 +7,7 @@ repository = "https://github.com/LinearDev/lumelog"
 keywords = ["logging", "log", "debugging", "runtime-config", "structured-logging"]
 categories = ["development-tools", "development-tools::debugging"]
 readme = "README.md"
-version = "0.1.3"
+version = "0.1.4"
 edition = "2021"
 documentation = "https://docs.rs/lumelog/latest/lumelog/"
 
