@@ -1,1 +1,0 @@
-/Users/amadeus/Desktop/git/lumelog/target/release/liblumelog.rlib: /Users/amadeus/Desktop/git/lumelog/src/lib.rs /Users/amadeus/Desktop/git/lumelog/src/log.rs /Users/amadeus/Desktop/git/lumelog/src/macros.rs
