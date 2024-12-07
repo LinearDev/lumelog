@@ -11,8 +11,7 @@
 //!
 //! ## Usage
 //! 1. Build a configuration using `ConfigBuilder`.
-//! 2. Initialize the global configuration with `CONFIG.set()`.
-//! 3. Use macros for logging (`info!`, `debug!`, etc.).
+//! 2. Use macros for logging (`info!`, `debug!`, etc.).
 
 use once_cell::sync::OnceCell;
 
@@ -23,7 +22,7 @@ mod macros;
 pub mod log;
 
 /// Global configuration instance.
-pub static CONFIG: OnceCell<Config> = OnceCell::new();
+static CONFIG: OnceCell<Config> = OnceCell::new();
 
 /// Represents the severity level of logs.
 #[derive(Clone, PartialEq, PartialOrd, Debug)]
@@ -135,10 +134,10 @@ impl ConfigBuilder {
     /// Creates a new `ConfigBuilder` with default settings.
     pub fn new() -> ConfigBuilder {
         ConfigBuilder {
-            log_level: None,
+            log_level: Some(LogLevel::INFO),
             log_in_release: false,
             log_with_time: Some(true),
-            std: false,
+            std: true,
             file_logger_config: None,
         }
     }
