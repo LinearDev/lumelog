@@ -15,7 +15,7 @@ Add `lumelog` to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-lumelog = "0.1.1"
+lumelog = "0.1.3"
 ```
 
 Then, include it in your code:

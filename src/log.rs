@@ -44,7 +44,7 @@ use crate::{Config, FileLogger, FileLoggerFormat, LogLevel, CONFIG};
 /// * `level` - The log level for the message.
 /// * `message` - The message to be logged.
 pub fn log(level: LogLevel, message: &str) {
-    let config_ref = match CONFIG.get() {
+    let config_ref: &Config = match CONFIG.get() {
         Some(c) => c,
         None => {
             print!("[ FATAL ] LumaLog: Config has not been initialized!");
